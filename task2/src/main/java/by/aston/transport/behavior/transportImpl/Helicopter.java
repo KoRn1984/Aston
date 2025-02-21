@@ -4,6 +4,8 @@ import by.aston.transport.behavior.CarriesCargo;
 import by.aston.transport.behavior.HasPropeller;
 import by.aston.transport.behavior.HasWheels;
 
+import java.util.Objects;
+
 public class Helicopter extends AbstractTransport implements HasPropeller, HasWheels, CarriesCargo {
     private final int numberOfWheels;
 
@@ -35,5 +37,25 @@ public class Helicopter extends AbstractTransport implements HasPropeller, HasWh
     @Override
     public int getNumberOfWheels() {
         return numberOfWheels;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Helicopter that = (Helicopter) o;
+        return numberOfWheels == that.numberOfWheels;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), numberOfWheels);
+    }
+
+    @Override
+    public String toString() {
+        return "Helicopter{" +
+                "numberOfWheels=" + numberOfWheels +
+                '}';
     }
 }
