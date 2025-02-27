@@ -26,6 +26,12 @@ public class MyList {
             System.out.print(myArrayList.get(i) + " ");
         }
 
+        myArrayList.remove(2);
+        System.out.println("\n\nПосле удаления элемента из MyArrayList с index = 2: ");
+        for (int i = 0; i < myArrayList.size(); i++) {
+            System.out.print(myArrayList.get(i) + " ");
+        }
+
         // Пример использования MyLinkedList.
         MyLinkedList<String> myLinkedList = new MyLinkedList<>();
         myLinkedList.add("Banana");
@@ -41,6 +47,12 @@ public class MyList {
         MyLinkedList.bubbleSort(myLinkedList);
 
         System.out.println("\nMyLinkedList после сортировки: ");
+        for (int i = 0; i < myLinkedList.size(); i++) {
+            System.out.print(myLinkedList.get(i) + " ");
+        }
+
+        myLinkedList.remove(2);
+        System.out.println("\n\nПосле удаления элемента из MyLinkedList с index = 2: ");
         for (int i = 0; i < myLinkedList.size(); i++) {
             System.out.print(myLinkedList.get(i) + " ");
         }
